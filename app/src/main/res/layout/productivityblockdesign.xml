@@ -25,7 +25,7 @@
             android:orientation="vertical"
             android:visibility="visible">
 
-            <TextView
+            <EditText
                 android:id="@+id/BlockDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 android:text="До 14:30"
                 android:textAlignment="textEnd" />
 
-            <TextView
+            <EditText
                 android:id="@+id/BlockName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -43,18 +43,19 @@
                 android:text="Название задания" />
 
             <LinearLayout
+                android:id="@+id/DateLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:visibility="visible">
 
-                <TextView
+                <EditText
                     android:id="@+id/BlockInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Сделать нужно то-то"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
             </LinearLayout>
         </LinearLayout>
