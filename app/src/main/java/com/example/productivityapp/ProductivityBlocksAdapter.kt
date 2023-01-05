@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.w3c.dom.Text
 
 class ProductivityBlocksAdapter: RecyclerView.Adapter<ProductivityBlocksAdapter.ProductivityBlocksHolder>() {
-    var TList = ArrayList<ProductivityBlocks>()
+    var TList = emptyList<ProductivityBlocks>()
     class ProductivityBlocksHolder(view: View): RecyclerView.ViewHolder(view){
         val linearLayout : LinearLayout = view.findViewById(R.id.DateLayout)
 
@@ -23,7 +23,7 @@ class ProductivityBlocksAdapter: RecyclerView.Adapter<ProductivityBlocksAdapter.
     }
 
     override fun onBindViewHolder(holder: ProductivityBlocksHolder, position: Int) {
-        holder.itemView.findViewById<TextView>(R.id.BlockDate).text = TList[position].DeadLine
+        holder.itemView.findViewById<TextView>(R.id.BlockDate).text = TList[position].DeadLine.toString()
         holder.itemView.findViewById<TextView>(R.id.BlockName).text = TList[position].Name
         holder.itemView.findViewById<TextView>(R.id.BlockInfo).text = TList[position].Description
 
@@ -42,7 +42,7 @@ class ProductivityBlocksAdapter: RecyclerView.Adapter<ProductivityBlocksAdapter.
         return TList.size
     }
 
-    fun NewTask(list: ArrayList<ProductivityBlocks>){
+    fun NewTask(list: List<ProductivityBlocks>){
         TList = list
         notifyDataSetChanged()
     }

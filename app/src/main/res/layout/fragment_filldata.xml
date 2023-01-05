@@ -23,10 +23,10 @@
         android:paddingStart="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <Button
         android:id="@+id/f_add_block"
@@ -36,10 +36,10 @@
         android:text="Добавить"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/f_button_back"
-        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintHorizontal_bias="0.387"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
+        app:layout_constraintVertical_bias="0.71" />
 
     <Button
         android:id="@+id/f_button_back"
@@ -49,10 +49,27 @@
         android:text="Назад"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
+        app:layout_constraintVertical_bias="0.71" />
+
+    <EditText
+        android:id="@+id/filld_Date"
+        android:layout_width="297dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_fields"
+        android:ems="10"
+        android:hint="Введите требуемое время"
+        android:inputType="datetime|time"
+        android:paddingStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filld_description"
+        app:layout_constraintVertical_bias="0.043" />
 
     <EditText
         android:id="@+id/filld_description"
@@ -71,5 +88,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filld_name"
         app:layout_constraintVertical_bias="0.03" />
+
+    <RadioGroup
+        android:id="@+id/f_radiogroup"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filld_Date"
+        app:layout_constraintVertical_bias="0.127">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="72dp"
+            android:text="RadioButton" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

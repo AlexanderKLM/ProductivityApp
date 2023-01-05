@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class BlockViewModel(application: Application): AndroidViewModel(application) {
-    private val readAllData: LiveData<List<ProductivityBlocks>>
+    val readAllData: LiveData<List<ProductivityBlocks>>
     private val repository: Blockrepository
 
     init {

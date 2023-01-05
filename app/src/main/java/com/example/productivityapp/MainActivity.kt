@@ -1,21 +1,18 @@
 package com.example.productivityapp
 
-import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.Color.DKGRAY
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.TOUCH_SLOP_DEFAULT
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.productivityapp.databinding.ActivityMainBinding
 import java.util.*
-import kotlin.reflect.typeOf
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,12 +21,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: ProductivityBlocksAdapter
     lateinit var recyclerView: RecyclerView
     val addDialog = Filldata()
-
+    private lateinit var nBlockViewModel: BlockViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        nBlockViewModel= ViewModelProvider(this).get(BlockViewModel::class.java)
+        nBlockViewModel.readAllData.observe(this, androidx.lifecycle.Observer { BlockDB -> adapter.NewTask(BlockDB) })
         initial()
 
         val itemTouchHelper = ItemTouchHelper(object :
@@ -70,26 +69,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun new_block(view: View) {
-        var Name = findViewById<EditText>(R.id.filld_name)
-        var gname = Name.text.toString()
-        var Desc = findViewById<EditText>(R.id.filld_description)
-        var gdesc = Desc.text.toString()
-        val DeadLine = "29 May"
+        val Name = findViewById<EditText>(R.id.filld_name)
+        val gname = Name.text.toString()
+        val Desc = findViewById<EditText>(R.id.filld_description)
+        val gdesc = Desc.text.toString()
+        val DeadLine =  findViewById<EditText>(R.id.filld_Date)
+        val gdate = DeadLine.text.toString()
         val Exp = true
         val Status = "Выполняется"
         val Type = "Движимый"
-        if (gname.isEmpty() &&  gdesc.isEmpty()) {
+        if (gname.isEmpty() && gdesc.isEmpty()) {
             val hleb =Toast.makeText(this,"Заполните все поля", Toast.LENGTH_SHORT)
             hleb.show()
         } else {
             val task = ProductivityBlocks(
-                gname, gdesc, DeadLine, Exp, Status, Type
+                gname, gdesc, gdate, Exp, Status, Type
             )
-            REC.add(task)
-            adapter.NewTask(REC)
+            nBlockViewModel.addBlock(task)
+            /*REC.add(task)
+            adapter.NewTask(REC)*/
             getSupportFragmentManager().beginTransaction()
                 .remove(addDialog)
                 .commit()
+            val hleb =Toast.makeText(this,"Список обновлен", Toast.LENGTH_SHORT)
+            hleb.show()
             val b = binding.button111
             b.isClickable = true
             b.backgroundTintList = getColorStateList(R.color.purple_500)
