@@ -23,7 +23,7 @@ class ProductivityBlocksAdapter: RecyclerView.Adapter<ProductivityBlocksAdapter.
     }
 
     override fun onBindViewHolder(holder: ProductivityBlocksHolder, position: Int) {
-        holder.itemView.findViewById<TextView>(R.id.BlockDate).text = TList[position].DeadLine.toString()
+        holder.itemView.findViewById<TextView>(R.id.BlockDate).text = TList[position].EndDate.toString()
         holder.itemView.findViewById<TextView>(R.id.BlockName).text = TList[position].Name
         holder.itemView.findViewById<TextView>(R.id.BlockInfo).text = TList[position].Description
 

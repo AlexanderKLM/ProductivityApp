@@ -6,13 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animationCache="true"
-    android:background="@android:color/transparent"
-    android:backgroundTint="#74000000"
+    android:background="@color/white"
     android:backgroundTintMode="screen">
 
 
+    <TextView
+        android:id="@+id/text3Step"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:text="Укажите ваши занятия"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textStep3"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <TextView
+        android:id="@+id/textStep3"
+        android:layout_width="99dp"
+        android:layout_height="25dp"
+        android:text="Шаг 3 из 3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
     <EditText
-        android:id="@+id/filld_name"
+        android:id="@+id/S3Remind"
         android:layout_width="297dp"
         android:layout_height="48dp"
         android:background="@drawable/round_fields"
@@ -25,55 +50,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintTop_toBottomOf="@+id/text3Step"
+        app:layout_constraintVertical_bias="0.039" />
 
     <Button
         android:id="@+id/f_add_block"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:onClick="new_block"
         android:text="Добавить"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/f_button_back"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.79"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintTop_toBottomOf="@+id/FinalButton"
+        app:layout_constraintVertical_bias="0.248" />
 
     <Button
         android:id="@+id/f_button_back"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:onClick="fragment_back"
+        android:onClick="S3Back"
         android:text="Назад"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintTop_toBottomOf="@+id/FinalButton"
+        app:layout_constraintVertical_bias="0.248" />
 
     <EditText
-        android:id="@+id/filld_Date"
+        android:id="@+id/S3TimeReq"
         android:layout_width="297dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_fields"
+        android:paddingStart="5dp"
         android:ems="10"
         android:hint="Введите требуемое время"
         android:inputType="datetime|time"
-        android:paddingStart="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filld_description"
+        app:layout_constraintTop_toBottomOf="@+id/S3Desc"
         app:layout_constraintVertical_bias="0.043" />
 
     <EditText
-        android:id="@+id/filld_description"
-        android:layout_width="300dp"
+        android:id="@+id/S3Desc"
+        android:layout_width="297dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_fields"
@@ -84,35 +109,77 @@
         android:paddingStart="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filld_name"
+        app:layout_constraintTop_toBottomOf="@+id/S3Remind"
         app:layout_constraintVertical_bias="0.03" />
 
-    <RadioGroup
-        android:id="@+id/f_radiogroup"
-        android:layout_width="297dp"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/S3Duration"
+        android:layout_width="116dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_fields"
+        android:hint="Часы"
+        android:paddingStart="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filld_Date"
-        app:layout_constraintVertical_bias="0.127">
+        app:layout_constraintTop_toBottomOf="@+id/S3DeadLine"
+        app:layout_constraintVertical_bias="0.065" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="119dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:text="RadioButton" />
+    <EditText
+        android:id="@+id/S3Priority"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_fields"
+        android:hint="Приоритет от 1 до 9"
+        android:paddingStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/S3TimeReq"
+        app:layout_constraintVertical_bias="0.065" />
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="72dp"
-            android:text="RadioButton" />
-    </RadioGroup>
+    <EditText
+        android:id="@+id/S3DeadLine"
+        android:layout_width="116dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_fields"
+        android:hint="Срок сдачи"
+        android:paddingStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/S3Priority"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/S3TimeReq"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <EditText
+        android:id="@+id/S3Filter"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_fields"
+        android:hint="Фильтр"
+        android:paddingStart="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/f_add_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/S3Duration"
+        app:layout_constraintTop_toBottomOf="@+id/S3Priority"
+        app:layout_constraintVertical_bias="0.152" />
+
+    <Button
+        android:id="@+id/FinalButton"
+        android:layout_width="297dp"
+        android:layout_height="48dp"
+        android:text="Составить расписание"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/S3Duration"
+        app:layout_constraintVertical_bias="0.136" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

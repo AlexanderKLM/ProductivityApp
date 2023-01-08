@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timech"
+    android:layout_width="match_parent"
+
+    android:background="?android:attr/colorBackground"
+    android:layout_height="match_parent"
+    tools:context=".TimeCheck">
+
+
+    <TextView
+        android:id="@+id/TextStep1"
+        android:layout_width="99dp"
+        android:layout_height="25dp"
+        android:text="Шаг 1 из 3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/TaskTimeShow1"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:hint="С 7:00"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/StartTaskstep1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text2Step1"
+        app:layout_constraintVertical_bias="0.441" />
+
+    <TextView
+        android:id="@+id/TaskTimeShow2"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:hint="До 18:00"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/startTaskstep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text2Step1"
+        app:layout_constraintVertical_bias="0.922" />
+
+    <Button
+        android:id="@+id/Step1Next"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:onClick="S1Next"
+        android:text="Дальше"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.793"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTaskstep"
+        app:layout_constraintVertical_bias="0.425" />
+
+    <Button
+        android:id="@+id/Step1Back"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:onClick="fragment_back"
+        android:text="Отмена"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Step1Next"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTaskstep"
+        app:layout_constraintVertical_bias="0.425" />
+
+    <Button
+        android:id="@+id/startTaskstep"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Время окончания"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StartTaskstep1"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/StartTaskstep1"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="Время начала"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text2Step1" />
+
+    <TextView
+        android:id="@+id/Text2Step1"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:text="Со скольки до скольки вы желаете работать?"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextStep1"
+        app:layout_constraintVertical_bias="0.025" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
