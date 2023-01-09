@@ -2,17 +2,20 @@ package com.example.productivityapp
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
-interface BlockDAO {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addBlock(block: ProductivityBlocks)
+interface SeriousDAO {
 
-    @Query("SELECT * FROM Block1 ORDER BY id ASC")
-    fun readAllData(): LiveData<List<ProductivityBlocks>>
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun addSerious(blockS: SeriousBlocks)
+
+    @Query("SELECT * FROM Block2")
+    fun readAllDataser(): LiveData<List<SeriousBlocks>>
+
 
 
 }

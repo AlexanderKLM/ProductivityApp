@@ -78,31 +78,7 @@ class MainActivity : AppCompatActivity() {
         val Name = findViewById<EditText>(R.id.S3Remind)
         val gname = Name.text.toString()
         val Desc = findViewById<EditText>(R.id.S3Desc)
-        val gdesc = Desc.text.toString()
-        val DeadLine = findViewById<EditText>(R.id.S3TimeReq)
-        val gdate = DeadLine.text.toString()
-        val Exp = true
-        val Status = "Выполняется"
-        val Type = "Движимый"
-        /*   if (gname.isEmpty() && gdesc.isEmpty()) {
-            val hleb =Toast.makeText(this,"Заполните все поля", Toast.LENGTH_SHORT)
-            hleb.show()
-        } else {
-            val task = ProductivityBlocks(
-                gname, gdesc, gdate, Exp, Status, Type
-            )
-            nBlockViewModel.addBlock(task)
-            /*REC.add(task)
-            adapter.NewTask(REC)*/
-            getSupportFragmentManager().beginTransaction()
-                .remove(addDialog)
-                .commit()
-            val hleb =Toast.makeText(this,"Список обновлен", Toast.LENGTH_SHORT)
-            hleb.show()
-            val b = binding.button111
-            b.isClickable = true
-            b.backgroundTintList = getColorStateList(R.color.purple_500)
-              }*/
+
     }
 
     fun fragment_back(view: View) {
